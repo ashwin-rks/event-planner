@@ -1,0 +1,173 @@
+.setColor {
+  color: #dd99bb;
+  background-color: #1e1938;
+}
+
+.container-fluid.vh-100.setColor {
+  background-image: url("../imgs/scattered-forcefields.svg");
+  background-size: cover;
+  background-position: center;
+}
+
+#dashboard {
+  min-height: 100vh;
+  background-image: url("../imgs/wye-scatter-haikei.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat-y;
+}
+
+#create-event {
+  height: 100vh;
+  background-image: url("../imgs/polygon-scatter-haikei.svg");
+  background-size: cover;
+  background-position: center;
+}
+
+#my-event {
+  min-height: 100vh;
+  background-image: url("../imgs/circle-scatter-haikei.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat-y;
+}
+
+#my-bookings {
+  min-height: 100vh;
+  background-image: url("../imgs/diamond-scatter-haikei.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat-y;
+}
+
+.borderColor {
+  border: 1px solid #dd99bb !important;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.btnColor {
+  background-color: rgb(221, 153, 187);
+  color: #1e1938;
+}
+
+.btnColor:hover {
+  background-color: #b97296;
+  color: #1e1938;
+}
+
+.form-control:valid {
+  background-color: #1e1938 !important;
+  border: 1px solid #dd99bb;
+}
+
+.form-control:not(:active) {
+  color: #dd99bb;
+  background-color: #1e1938 !important;
+  border-color: #dd99bb;
+}
+
+.form-control:focus {
+  color: #dd99bb;
+  background-color: #1e1938 !important;
+  border-color: #dd99bb;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(221, 153, 187, 0.75);
+}
+
+.setError {
+  color: #dd99bb;
+  background-color: #1e1938 !important;
+  border-color: #ff0000;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(255, 0, 0, 0.75);
+}
+
+.notBtn {
+  color: #dd99bb;
+  background-color: #1e1938;
+  border: 0px;
+  text-decoration: underline;
+}
+
+.img-fullscreen {
+  width: 100vw !important;
+  height: 100vh !important;
+  object-fit: cover;
+}
+
+/* Carousel Stuff */
+.carousel-container {
+  width: 80%;
+  margin: auto;
+}
+
+.card {
+  background-color: #dd99bb;
+  color: #1e1938;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+
+.card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  margin-bottom: 10px;
+}
+
+.slick-arrow {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 100; 
+}
+
+.slick-prev {
+  left: 10px;
+}
+
+.slick-next {
+  right: 10px;
+}
+
+.slick-arrow:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.slick-dots {
+  bottom: -30px;
+}
+
+.carousel-section {
+  margin: 50px 0 0 0 ;
+}
+
+.carousel-header {
+  margin: 0 200px;
+}
+
+.slick-arrow {
+  z-index: 1;
+}

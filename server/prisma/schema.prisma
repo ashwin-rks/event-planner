@@ -1,0 +1,58 @@
+  // This is your Prisma schema file,
+  // learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+  // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+  // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+  generator client {
+    provider = "prisma-client-js"
+  }
+
+  datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+  }
+
+  model User {
+    id        Int    @id @default(autoincrement())
+    firstName String @map("first_name")
+    lastName  String @map("last_name")
+    email     String @unique
+    password  String
+    userType  String @map("user_type")
+
+    events   Event[]
+    bookings Booked[]
+  }
+
+  enum EventType {
+    SPORTS
+    MUSIC
+    THEATRE
+  }
+
+  model Event {
+    id               Int       @id @default(autoincrement())
+    userId           Int
+    user             User      @relation(fields: [userId], references: [id])
+    eventName        String    @map("event_name")
+    eventType        EventType
+    imageUrl         String    @map("image_url")
+    eventStart       DateTime  @map("event_start")
+    eventEnd         DateTime  @map("event_end")
+    eventDescription String    @map("event_description") @db.VarChar(500)
+    ticketPrice      Int       @map("ticket_price")
+    ticketsAvailable Int       @map("tickets_available")
+    ticketsBooked    Int       @default(0) @map("tickets_booked")
+    bookings         Booked[]  @relation("EventBookings")
+  }
+
+  model Booked {
+    id      Int   @id @default(autoincrement())
+    userId  Int
+    eventId Int
+    user    User  @relation(fields: [userId], references: [id])
+    event   Event @relation("EventBookings", fields: [eventId], references: [id], onDelete: Cascade)
+
+    @@unique([userId, eventId])
+  }
